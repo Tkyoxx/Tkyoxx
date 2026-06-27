@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./banner.svg" alt="Tkyo_0x — Full-stack Developer & SaaS builder" width="100%" />
+<img src="https://raw.githubusercontent.com/Tkyoxx/Tkyoxx/main/banner.png" alt="Tkyo_0x — Full-stack Developer & SaaS builder" width="100%" />
 
 <br/>
 
