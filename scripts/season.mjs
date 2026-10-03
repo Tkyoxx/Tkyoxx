@@ -1,21 +1,19 @@
 import { C, doc, t, esc, fit, wrap, r, cardBg, glowDef, accentGrad, glowFilter, handText, handArrow } from './lib.mjs';
 
 const ROUNDS = [
-  { when: 'EL ARRANQUE', title: 'Sin academia', text: 'Aprendí solo: tutoriales, documentación y mucha prueba y error.' },
-  { when: 'OCT 2025', title: 'Llego a GitHub', text: 'Abro mi cuenta y empiezo a construir en serio.' },
-  { when: 'JUN 2026', title: 'PlagaSync', text: 'Mi app móvil offline-first con Expo sale a pista.' },
-  { when: 'JUL 2026', title: 'Nova.mp', text: 'Un hub de contenido para la comunidad SA-MP.' },
-  { when: 'HOY', title: 'Mi SaaS', text: 'Producto completo, construido en solitario.', live: true },
-  { when: 'PRÓXIMO', title: '¿Tu proyecto?', text: 'Siempre hay sitio en la parrilla. Escríbeme.', ghost: true },
-];
+  { when: '11 AÑOS', title: 'El arranque', text: 'Un PC y muchos juegos. Quería saber cómo funcionaban por dentro.' },
+  { when: 'EL TALLER', title: 'Romper para aprender', text: 'Modificar juegos, optimizar Windows y armar mis propias herramientas.' },
+  { when: 'SA-MP', title: 'Mi escuela', text: 'Scripts con MoonLoader para roleplay, como una bodycam con /body y F10.' },
+  { when: 'HOY', title: 'PlagaSync', text: 'Mi SaaS para fumigadoras en Colombia, construido de punta a punta.', live: true },
+  { when: 'LA META', title: 'Vivir de lo mío', text: 'Productos propios que resuelvan problemas reales a gente real.', ghost: true },
+]
 
 const W = 1200;
 const H = 350;
 const Y = 132;
 const X0 = 40;
 const X1 = 1160;
-const STEP = 196;
-const NX = ROUNDS.map((_, i) => 110 + i * STEP);
+const NX = ROUNDS.map((_, i) => 130 + (i * 940) / (ROUNDS.length - 1));
 const DUR = 12;
 
 function cubicLen(p0, p1, p2, p3) {
@@ -41,8 +39,8 @@ function trackPath() {
   for (let i = 0; i < NX.length - 1; i++) {
     const s = i % 2 ? 1 : -1;
     const p0 = [NX[i], Y];
-    const p1 = [NX[i] + 70, Y + 24 * s];
-    const p2 = [NX[i + 1] - 70, Y - 24 * s];
+    const p1 = [NX[i] + 90, Y + 26 * s];
+    const p2 = [NX[i + 1] - 90, Y - 26 * s];
     const p3 = [NX[i + 1], Y];
     d += ` C ${p1[0]} ${p1[1]} ${p2[0]} ${p2[1]} ${p3[0]} ${p3[1]}`;
     total += cubicLen(p0, p1, p2, p3);
@@ -55,7 +53,7 @@ function trackPath() {
 
 export function season() {
   const { d, marks } = trackPath();
-  const stops = 4;
+  const stops = ROUNDS.findIndex((x) => x.live);
   const travel = 7.6;
   const pause = 0.45;
   const keyT = [0];
@@ -100,8 +98,8 @@ export function season() {
     `<linearGradient id="drv" gradientUnits="userSpaceOnUse" x1="${X0}" y1="0" x2="${NX[stops]}" y2="0"><stop offset="0" stop-color="${C.blue}"/><stop offset=".55" stop-color="${C.red}"/><stop offset="1" stop-color="${C.yellow}"/></linearGradient>`;
 
   let body = cardBg(W, H);
-  body += t(34, 46, 'TEMPORADA  //  MI CAMINO', { font: 'monob', size: 13, fill: C.red, ls: 4 });
-  body += t(W - 34, 46, `RONDA ${String(stops + 1).padStart(2, '0')} · EN CURSO`, { font: 'mono', size: 13, fill: C.dim, ls: 3, anchor: 'end' });
+  body += t(34, 46, 'TEMPORADA  //  MI TRAYECTO', { font: 'monob', size: 13, fill: C.red, ls: 4 });
+  body += t(W - 34, 46, 'DE LOS 11 AÑOS A HOY', { font: 'mono', size: 13, fill: C.dim, ls: 3, anchor: 'end' });
 
   body += `<path d="${d}" stroke="#121B38" stroke-width="14" stroke-linecap="round"/>
 <path d="${d}" stroke="${C.line2}" stroke-width="1.5" stroke-dasharray="6 8"/>
@@ -110,7 +108,7 @@ export function season() {
 
   ROUNDS.forEach((rd, i) => {
     const x = NX[i];
-    const colW = 178;
+    const colW = 210;
     if (rd.ghost) {
       body += `<circle cx="${x}" cy="${Y}" r="11" fill="#081024" stroke="${C.dim}" stroke-width="2" stroke-dasharray="3 4"/>`;
     } else if (rd.live) {
@@ -140,10 +138,11 @@ export function season() {
 <rect x="-15" y="-6.5" width="3.5" height="13" rx="1" fill="${C.red}"/>
 </g>`;
 
-  body += handText(132, 84, 'aquí empezó todo', { size: 26, delay: 1.2, rotate: -4 });
-  body += handArrow(128, 78, 112, 110, { bend: 0.4, delay: 2.0, head: 10 });
-  body += handText(1068, 84, 'el siguiente puede ser el tuyo', { size: 26, delay: 2.6, rotate: -3, anchor: 'end' });
-  body += handArrow(1074, 74, 1094, 110, { bend: -0.4, delay: 3.8, head: 10 });
+  body += handText(NX[0] + 24, 86, 'aquí empezó todo', { size: 26, delay: 1.2, rotate: -4 });
+  body += handArrow(NX[0] + 20, 80, NX[0] + 3, 112, { bend: 0.4, delay: 2.0, head: 10 });
+  const last = NX[NX.length - 1];
+  body += handText(last - 26, 86, 'a donde voy', { size: 26, delay: 2.6, rotate: -3, anchor: 'end' });
+  body += handArrow(last - 20, 76, last - 2, 112, { bend: -0.4, delay: 3.4, head: 10 });
 
-  return doc({ w: W, h: H, title: 'Temporada — mi camino como desarrollador', fonts: ['display', 'sans', 'mono', 'monob', 'hand'], css, defs, body });
+  return doc({ w: W, h: H, title: 'Temporada — mi trayecto, de los 11 años a hoy', fonts: ['display', 'sans', 'mono', 'monob', 'hand'], css, defs, body });
 }

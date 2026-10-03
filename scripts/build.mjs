@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { write } from './lib.mjs';
 import { hero } from './hero.mjs';
 import { radio, driver, rules, stack, footer, ctaGrid, ctaDiscord } from './cards.mjs';
-import { featured, plagasync, nova } from './projects.mjs';
+import { plagasync, garage } from './showcase.mjs';
 import { season } from './season.mjs';
 import { fetchStats, telemetry } from './telemetry.mjs';
 import { loadGrid, joinGrid, grid } from './grid.mjs';
@@ -27,6 +27,6 @@ if (liveDir) {
   console.log(write(dir, 'grid.svg', await grid(loadGrid(dir, OWNER), OWNER)));
 } else {
   const out = path.join(root, 'assets');
-  const pieces = { hero, radio, driver, rules, season, stack, featured, plagasync, nova, footer, 'cta-grid': ctaGrid, 'cta-discord': ctaDiscord };
+  const pieces = { hero, radio, driver, rules, season, garage, stack, plagasync, footer, 'cta-grid': ctaGrid, 'cta-discord': ctaDiscord };
   for (const [name, fn] of Object.entries(pieces)) console.log(write(out, `${name}.svg`, fn()));
 }

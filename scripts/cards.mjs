@@ -13,16 +13,22 @@ const delay = (s) => `style="animation-delay:${r(s)}s"`;
 const RADIO = [
   ['ING', 'Box, box. ¿Cómo va ese deploy?'],
   ['P', 'Todo verde en producción. Simply lovely.'],
-  ['ING', 'Copy. ¿Quién te enseñó a manejar así?'],
-  ['P', 'Nadie. Tutoriales, docs y mucho prueba y error.'],
+  ['ING', '¿Desde cuándo manejas así?'],
+  ['P', 'Desde los 11, desarmando juegos para entenderlos.'],
+  ['ING', '¿Cómo va PlagaSync en campo?'],
+  ['P', 'Cierra la visita y el reporte sale firmado.'],
+  ['ING', 'Copy. ¿Te pasaste a Windows 11?'],
+  ['P', 'Ni loco jsjs. Prefiero lo ligero.'],
+  ['ING', '¿Y tu punto fuerte?'],
+  ['P', 'Ciberseguridad. Lo que construyo, lo blindo.'],
   ['ING', '¿Y si alguien quiere construir algo contigo?'],
   ['P', 'Que me escriba. Siempre hay sitio en la parrilla.'],
-]
+];
 
 export function radio() {
   const W = 1200;
   const H = 150;
-  const SLOT = 4.2;
+  const SLOT = 3.9;
   const TOTAL = SLOT * RADIO.length;
   const size = 24;
   const cw = measure('M', 'mono', size);
@@ -99,9 +105,10 @@ export function driver() {
   const H = 380;
   const rows = [
     ['PAÍS', 'Colombia — Cúcuta', true],
+    ['AL VOLANTE', 'Desde los 11 años'],
     ['FORMACIÓN', 'Autodidacta'],
-    ['ESPECIALIDAD', 'SaaS de punta a punta'],
-    ['MONOPLAZA', 'Next.js · Supabase · Expo'],
+    ['ESPECIALIDAD', 'Ciberseguridad'],
+    ['FUERA DE PISTA', 'Motos, piano y gaming'],
     ['REFERENTE', 'Max Verstappen'],
   ];
   const css = BASE_CSS + `
@@ -116,7 +123,7 @@ export function driver() {
   body += t(36, 134, '@Tkyoxx  ·  Full-stack  ·  Founder', { font: 'mono', size: 15, fill: C.dim, cls: 'in', extra: delay(0.2) });
   body += `<line x1="34" y1="158" x2="566" y2="158" stroke="${C.line}"/>`;
   rows.forEach(([k, v, flag], i) => {
-    const y = 196 + i * 40;
+    const y = 192 + i * 34;
     body += `<g class="in" ${delay(0.3 + i * 0.1)}>`;
     body += t(34, y, k, { font: 'mono', size: 13, fill: C.dim, ls: 2.5 });
     let vx = 196;
@@ -126,20 +133,26 @@ export function driver() {
     }
     body += t(vx, y, esc(v), { font: 'semi', size: 19, fill: C.text });
     body += `</g>`;
-    if (i < rows.length - 1) body += `<line x1="34" y1="${y + 15}" x2="566" y2="${y + 15}" stroke="${C.line}" stroke-opacity=".6" stroke-dasharray="2 5"/>`;
+    if (i < rows.length - 1) body += `<line x1="34" y1="${y + 13}" x2="566" y2="${y + 13}" stroke="${C.line}" stroke-opacity=".6" stroke-dasharray="2 5"/>`;
   });
   const aw = measure('Autodidacta', 'semi', 19);
-  body += handCircle(196 + aw / 2, 230, aw / 2 + 16, 19, { seed: 7, delay: 1.3 });
-  body += handArrow(398, 210, 196 + aw + 24, 226, { bend: -0.3, delay: 2.2 });
-  body += handText(404, 212, 'nadie me enseñó', { size: 26, delay: 2.9, rotate: -6 });
+  body += handCircle(196 + aw / 2, 254, aw / 2 + 16, 17, { seed: 7, delay: 1.3 });
+  body += handArrow(398, 238, 196 + aw + 24, 252, { bend: -0.3, delay: 2.2 });
+  body += handText(404, 240, 'nadie me enseñó', { size: 26, delay: 2.9, rotate: -6 });
+  const cyw = measure('Ciberseguridad', 'semi', 19);
+  body += handUnderline(196, 300, cyw + 4, { seed: 9, delay: 3.6, color: C.red, width: 2.8 });
+  body += handArrow(412, 306, 196 + cyw + 14, 293, { bend: 0.3, delay: 4.2, head: 10 });
+  body += handText(418, 312, 'mi lado más pulido', { size: 25, delay: 4.8, rotate: -4 });
   return doc({ w: W, h: H, title: 'Ficha del piloto — Tkyo_0x', fonts: ['display', 'semi', 'mono', 'monob', 'hand'], css, defs, body });
 }
 
 const RULES = [
-  ['Iterar rápido', 'Prefiero algo vivo hoy que perfecto nunca.'],
-  ['Cuidar el detalle', 'La diferencia entre P1 y P2 está en las décimas.'],
-  ['Enviar', 'Si no está en producción, no cuenta.'],
-];
+  ['Lo necesito', 'Todo empieza con un problema real.'],
+  ['Lo investigo', 'Docs, foros y probar hasta entender.'],
+  ['Lo construyo', 'Sin esperar a tener todas las piezas.'],
+  ['Lo rompo', 'Si no lo rompo, no lo entiendo.'],
+  ['Lo arreglo', 'Y queda más ligero que antes.'],
+]
 
 export function rules() {
   const W = 600;
@@ -148,25 +161,25 @@ export function rules() {
 .trace{animation:trace 4s linear infinite;}@keyframes trace{from{stroke-dashoffset:0}to{stroke-dashoffset:-300}}`;
   const defs = glowDef(80, 360, 380, C.blue, 0.2) + accentGrad('acc') + glowFilter('gl', 3);
   let body = cardBg(W, H);
-  body += t(34, 48, 'CÓMO MANEJO', { font: 'monob', size: 13, fill: C.red, ls: 4 });
-  body += t(566, 48, 'REGLAS DEL PILOTO', { font: 'mono', size: 13, fill: C.dim, ls: 3, anchor: 'end' });
+  body += t(34, 48, 'CÓMO APRENDO', { font: 'monob', size: 13, fill: C.red, ls: 4 });
+  body += t(566, 48, 'MI LOOP', { font: 'mono', size: 13, fill: C.dim, ls: 3, anchor: 'end' });
   body += `<line x1="34" y1="70" x2="566" y2="70" stroke="${C.line}"/>`;
   RULES.forEach(([title, line], i) => {
-    const y = 122 + i * 92;
+    const y = 112 + i * 57;
     const num = String(i + 1).padStart(2, '0');
     body += `<g class="up" ${delay(0.2 + i * 0.15)}>
-<text x="34" y="${y + 18}" class="display" font-size="58" stroke="${C.line2}" stroke-width="1.5">${num}</text>
-<text x="34" y="${y + 18}" class="display trace" font-size="58" stroke="url(#acc)" stroke-width="1.8" stroke-dasharray="40 110" style="animation-delay:-${i * 1.3}s">${num}</text>
-${t(132, y - 4, esc(title.toUpperCase()), { font: 'display', size: 25, fill: C.text })}
-${t(133, y + 24, esc(line), { font: 'sans', size: 17, fill: C.sub })}
+<text x="34" y="${y + 14}" class="display" font-size="40" stroke="${C.line2}" stroke-width="1.5">${num}</text>
+<text x="34" y="${y + 14}" class="display trace" font-size="40" stroke="url(#acc)" stroke-width="1.6" stroke-dasharray="30 90" style="animation-delay:-${i * 0.9}s">${num}</text>
+${t(112, y - 2, esc(title.toUpperCase()), { font: 'display', size: 20, fill: C.text })}
+${t(113, y + 20, esc(line), { font: 'sans', size: 15.5, fill: C.sub })}
 </g>`;
-    if (i < RULES.length - 1) body += `<line x1="132" y1="${y + 46}" x2="566" y2="${y + 46}" stroke="${C.line}" stroke-dasharray="2 5"/>`;
+    if (i < RULES.length - 1) body += `<line x1="112" y1="${y + 33}" x2="440" y2="${y + 33}" stroke="${C.line}" stroke-dasharray="2 5"/>`;
   });
-  const ew = measure('ENVIAR', 'display', 25);
-  body += handUnderline(132, 309, ew + 6, { seed: 11, delay: 1.4, color: C.red, width: 3 });
-  body += handArrow(400, 292, 132 + ew + 22, 300, { bend: 0.25, delay: 2.0 });
-  body += handText(408, 290, 'la que más importa', { size: 25, delay: 2.6, rotate: -5 });
-  return doc({ w: W, h: H, title: 'Cómo manejo — reglas del piloto', fonts: ['display', 'sans', 'mono', 'monob', 'hand'], css, defs, body });
+  body += `<path d="M 470 344 C 560 330, 566 130, 482 104" stroke="${C.hand}" stroke-width="2.4" stroke-linecap="round" fill="none" stroke-dasharray="320" stroke-dashoffset="320"><animate attributeName="stroke-dashoffset" from="320" to="0" begin="1.6s" dur="1s" fill="freeze"/></path>
+<path d="M 494 96 L 482 104 L 496 112" stroke="${C.hand}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0"><set attributeName="opacity" to="1" begin="2.6s" fill="freeze"/></path>`;
+  body += handText(452, 232, 'y vuelta', { size: 23, delay: 2.7, rotate: -8 });
+  body += handText(450, 260, 'a empezar jsjs', { size: 23, delay: 3.1, rotate: -8 });
+  return doc({ w: W, h: H, title: 'Cómo aprendo — mi loop', fonts: ['display', 'sans', 'mono', 'monob', 'hand'], css, defs, body });
 }
 
 const COMPOUNDS = [

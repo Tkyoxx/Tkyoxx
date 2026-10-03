@@ -124,8 +124,8 @@ text{font-kerning:normal;}
 <path transform="translate(1007 374) scale(1)" d="m12 1.608 12 20.784H0Z" fill="#FFFFFF"/>
 <text x="1055" y="393" class="semi" font-size="19" fill="#F3F5FA" >Vercel</text>
 </g><g clip-path="url(#row2)"><rect class="sw" style="animation-delay:1.2s" x="372" y="322" width="180" height="128" fill="url(#sh)" transform="skewX(-20)"/></g><g transform="rotate(-3 560 50)">
-<clipPath id="hw6"><rect x="556" y="24" width="0" height="39"><animate attributeName="width" from="0" to="134.41" begin="1.6s" dur="0.63s" fill="freeze"/></rect></clipPath>
-<text x="560" y="50" class="hand" font-size="26" fill="#FFD43B" clip-path="url(#hw6)">lo que más uso</text>
+<clipPath id="hw10"><rect x="556" y="24" width="0" height="39"><animate attributeName="width" from="0" to="134.41" begin="1.6s" dur="0.63s" fill="freeze"/></rect></clipPath>
+<text x="560" y="50" class="hand" font-size="26" fill="#FFD43B" clip-path="url(#hw10)">lo que más uso</text>
 </g><path pathLength="100" d="M 712 44 Q 750 47.2 760 84" stroke="#FFD43B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" begin="2.3s" dur="0.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".6 .05 .3 1"/></path><path pathLength="100" d="M 750.99 74.63 L 760 84 L 762.39 71.22" stroke="#FFD43B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" begin="2.9s" dur="0.25s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".6 .05 .3 1"/></path>
 </g>
 </svg>

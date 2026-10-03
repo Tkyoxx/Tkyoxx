@@ -42,7 +42,7 @@ ${glowFilter('glowL', 7)}
 <animateTransform attributeName="gradientTransform" type="translate" values="-260 0;-260 0;860 0;860 0" keyTimes="0;.46;.62;1" dur="${LOOP}s" repeatCount="indefinite"/></linearGradient>`;
 
   const nameText = `<tspan fill="${C.text}">${n1}</tspan><tspan fill="url(#hot)">${n2}</tspan>`;
-  const sub = 'Full-stack developer  ·  SaaS de punta a punta para LATAM';
+  const sub = 'Dev autodidacta desde los 11  ·  creador de PlagaSync';
   const subSize = fit(sub, 'semi', 25, 700);
 
   const pillsY = 316;
@@ -200,7 +200,7 @@ ${ticker}
   return doc({
     w: W,
     h: H,
-    title: 'Tkyo_0x — Full-stack developer · SaaS de punta a punta para LATAM',
+    title: 'Tkyo_0x — dev autodidacta desde los 11, creador de PlagaSync',
     fonts: ['display', 'semi', 'mono', 'monob', 'hand'],
     css,
     defs,

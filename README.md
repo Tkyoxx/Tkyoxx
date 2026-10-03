@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/hero.svg" width="100%" alt="Tkyo_0x — Full-stack developer · SaaS de punta a punta para LATAM" />
+<img src="assets/hero.svg" width="100%" alt="Tkyo_0x — dev autodidacta desde los 11, creador de PlagaSync" />
 
 <img src="assets/radio.svg" width="100%" alt="Team radio" />
 
@@ -8,27 +8,24 @@
 
 <br/>
 
-**Hola, soy Tkyo.** Desarrollador full-stack de Cúcuta, Colombia, y autodidacta de principio a fin: aprendí con tutoriales, documentación y muchas horas de prueba y error.
+**Qué onda, soy Tkyo.** Me metí en esto a los 11 años, desarmando juegos para entender cómo funcionaban por dentro. De ahí pasé a optimizar Windows hasta dejarlo en los huesos y a escribir scripts para servidores de SA-MP. Nadie me enseñó: aprendí investigando, rompiendo y arreglando.
 
-Hoy construyo productos completos en solitario (base de datos, backend, interfaz y despliegue) y los llevo hasta producción. De la F1 me quedo con la mentalidad: iterar rápido, cuidar cada décima y no parar hasta cruzar la meta.
+Hoy mi lado más pulido es la **ciberseguridad**, y mi proyecto principal es [**PlagaSync**](https://plagasync.app), un SaaS para empresas de control de plagas en Colombia que construyo de punta a punta. ¿A dónde voy? A vivir de productos que construyo yo y que le resuelvan problemas reales a gente real.
 
 <br/>
 
 <p align="center">
   <img src="assets/driver.svg" width="49%" alt="Ficha del piloto" />
-  <img src="assets/rules.svg" width="49%" alt="Cómo manejo" />
+  <img src="assets/rules.svg" width="49%" alt="Cómo aprendo" />
 </p>
 
-<img src="assets/season.svg" width="100%" alt="Temporada: mi camino" />
+<img src="assets/season.svg" width="100%" alt="Temporada: mi trayecto, de los 11 años a hoy" />
+
+<a href="https://plagasync.app"><img src="assets/plagasync.svg" width="100%" alt="P1 — PlagaSync, SaaS para fumigadoras en Colombia" /></a>
+
+<img src="assets/garage.svg" width="100%" alt="Boxes: fuera de pista" />
 
 <img src="assets/stack.svg" width="100%" alt="Stack: compuestos de neumáticos" />
-
-<img src="assets/featured.svg" width="100%" alt="P1 — SaaS de gestión operativa" />
-
-<p align="center">
-  <a href="https://github.com/Tkyoxx/plagasync-app-releases"><img src="assets/plagasync.svg" width="49%" alt="P2 — PlagaSync" /></a>
-  <a href="https://github.com/Tkyoxx/nova.mp"><img src="assets/nova.svg" width="49%" alt="P3 — Nova.mp" /></a>
-</p>
 
 <img src="https://raw.githubusercontent.com/Tkyoxx/Tkyoxx/output/telemetry.svg" width="100%" alt="Telemetría en vivo" />
 
