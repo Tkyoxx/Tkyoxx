@@ -37,7 +37,7 @@ Hoy mi lado más pulido es la **ciberseguridad**, y mi proyecto principal es [**
 
 <p align="center">
   <a href="https://github.com/Tkyoxx/Tkyoxx/issues/new?title=%F0%9F%8F%81%20Entrar%20a%20la%20parrilla&body=Solo%20env%C3%ADa%20este%20issue%20y%20en%20un%20par%20de%20minutos%20aparecer%C3%A1s%20en%20la%20parrilla%20de%20salida.%20No%20hace%20falta%20escribir%20nada%20m%C3%A1s%20%F0%9F%8F%8E%EF%B8%8F"><img src="assets/cta-grid.svg" width="49%" alt="Toma tu lugar en la parrilla" /></a>
-  <a href="https://discord.com/users/tkyo_0x"><img src="assets/cta-discord.svg" width="49%" alt="Escríbeme por Discord: tkyo_0x" /></a>
+  <a href="https://discord.com/users/736035241189310465"><img src="assets/cta-discord.svg" width="49%" alt="Escríbeme por Discord: tkyo_0x" /></a>
 </p>
 
 <details>
